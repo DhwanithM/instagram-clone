@@ -1,0 +1,6 @@
+Put files in htdocs - filename of xampp server and also create a database in phpmyadmin called db 1) code - code 2) users - username and password
+sudo /opt/lampp/manager-linux-x64.run
+ngrok http 80
+add file name to the end of the link
+
+
